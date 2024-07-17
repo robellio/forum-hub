@@ -39,8 +39,8 @@ public class TopicoService {
                 .orElseThrow(() -> new RuntimeException("Tópico não encontrado"));
     }
 
-    public ListagemTopicoDTO cadastrar(CadastroTopicoDTO dto, String username) {
-        Usuario usuario = usuarioRepository.findByUsername(username)
+    public ListagemTopicoDTO cadastrar(CadastroTopicoDTO dto, String email) {
+        Usuario usuario = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
         Curso curso = cursoRepository.findByNome(dto.nomeCurso())
                 .orElseThrow(() -> new RuntimeException("Curso não encontrado"));
